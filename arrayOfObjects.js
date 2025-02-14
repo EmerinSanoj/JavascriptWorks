@@ -97,7 +97,7 @@ var lengthyMovies=movies.reduce((m1,m2)=>m1.runtime>m2.runtime?m1:m2)
 //shortest movie
 
 var shortestMovie=movies.reduce((m1,m2)=>m1.runtime<m2.runtime?m1:m2)
-console.log(shortestMovie);
+// console.log(shortestMovie);
 
 //drama movies
 
@@ -139,10 +139,20 @@ for(let g of allGenres){
 }
 // console.log(genreCount);
 
+var genreCountArray=Object.entries(genreCount)
+genreCountArray.sort((g1,g2)=>g2[1]-g1[1])
+// console.log(genreCountArray[0]);
+
+
+
 var movieYear=movies.map(m=>m.year)
 var yearCount={}
 movieYear.map(y=>y in yearCount?yearCount[y]+=1:yearCount[y]=1)
-console.log(yearCount);
+// console.log(yearCount);
+var yearArray=Object.entries(yearCount)
+yearArray.sort((y1,y2)=>y2[1]-y1[1])
+// console.log(yearArray[0]);
+
 
 
 
